@@ -5,7 +5,7 @@ option go_package = "pb/";
 
 service Raft {
   rpc AppendEntries(Entry) returns (EntryResponse) {}
-  rpc RequsetVote(VoteRequest) returns (Vote) {}
+  rpc RequestVote(VoteRequest) returns (Vote) {}
 }
 
 message Entry {
