@@ -1,0 +1,25 @@
+syntax = "proto3";
+package raft_consensus;
+
+option go_package = "pb/";
+
+service Raft {
+  rpc AppendEntries(Entry) returns (EntryResponse) {}
+  rpc RequsetVote(VoteRequest) returns (Vote) {}
+}
+
+message Entry {
+  string msg = 1;
+}
+
+message EntryResponse {
+  bool recv = 1;
+}
+
+message VoteRequest {
+  string msg = 1;
+}
+
+message Vote {
+  bool vote = 1;
+}
